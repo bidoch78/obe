@@ -1,0 +1,286 @@
+a.a-link.disabled {
+	color: #999;
+	cursor: default;
+}
+
+a.a-link.disabled:hover { text-decoration: none; }
+
+body.with-top-navbar { 
+	padding-top: 100px !important;
+	padding-bottom: 0px; 
+}
+
+body.obe-background1 {
+	background: url('../images/background_hd.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover; 
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+.navbar, .footer {
+	opacity: 0.9;
+	/*background-color: #e9ecef !important;*/
+}
+
+.container-fluid .colfirst { padding-top: 10px; }
+
+.footer-cookie-container { display: none; z-index: 2000; }
+
+.footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.footer.stickyfooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background-color: #BECDD4;
+	color: white;
+}
+
+.container-fluid { margin-bottom: 80px; }
+
+.footer-obe { /*position: fixed;*/ }
+
+.bg-obe { background-color: #FFFFFF !important; }
+
+.footer .footer-cookie { padding-left: 20px; padding-right: 20px; background-color: #7ac943; }
+.footer .footer-cookie-text { text-align: center; }
+.footer.stickyfooter .text-stickyfooter { color: white; }
+.footer-cookie button.close { margin-top: 10px;	font-size: 1.5rem; color: white; }
+
+nav .logo-obe28 { width: 80px; margin-right: 10px; }
+
+.navbar-apptitle { font-weight: bold; }
+@media (max-width: 576px) {
+	.navbar-apptitle { display: none; }
+}
+
+.nav-right-part button { margin-left: 10px; }
+
+/* MODAL LOGIN */
+
+.modal-login .modal-header { background-color: #BDCBD4; }
+.modal-login .modal-title { font-size: 1rem; font-weight: bold; }
+.modal-login .modal-sm { max-width: 400px; }
+.modal-login .btn-connect { width: 100%; }
+.modal-login .modal-body .row { padding-top: 10px; }
+
+/* WAIT */
+
+.group-courses-wait {
+	z-index: 1000;
+	position: absolute;
+	left: 50%;
+	font-size: 4rem;
+	-webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+	color: #1DADF4;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* PLAY */
+
+.col-play-name {
+	text-align:right;
+	padding-right: 10px;
+	padding-top: 30px;
+}
+
+.play-name {
+	font-size: 1.3em;
+}
+
+.center {
+	text-align: center;   
+}
+
+.merge-bottom-input {
+	 width: 80px;
+	 border-bottom-left-radius: 0;
+	 border-bottom-right-radius: 0;
+}
+
+.merge-top-left-button {
+	font-size: 2em;
+	border-top-left-radius: 0;
+}
+
+.merge-top-right-button {
+	font-size: 2em;
+	border-top-right-radius: 0;
+}
+
+.card-play {
+	min-width: 18rem;
+	max-width: 18rem;
+	width: 18rem;
+	margin-bottom: 15px !important;	
+}
+
+.card-play .card-footer { 
+	padding:0;
+}
+
+.minus-plus-value {
+	text-align: center;
+}
+
+#settingItems .card {
+	margin-bottom: 10px;
+}
+
+.icon-action { cursor: pointer; }
+.icon-action-view { color: #007bff; }
+.icon-action-delete { color: #dc3545; }
+
+.table-select tr > td { cursor: pointer; }
+
+#sessionDate { text-align: center; }
+
+/* */
+
+.card-obeinfo { width: 100%; background-color: #e9ecef; opacity: 0.8; }
+.card-obeinfo .card-header { text-align : center; font-weight: bold; }
+
+.obe-exchange { font-size: 4rem; }
+@media (max-width: 768px) {
+	.obe-exchange { display: none; }
+	.card-obeinfo { margin-top: 10px; }
+}
+
+.obeinfodefibasketitem ul:first-child > li { margin-top: 10px; }
+.obeinfodefibasketitem b { font-weight: bold; }
+
+.progress.obepasswordprgbar { height: 4px; border-radius: 0px; background-color: transparent; }
+
+.password-verdict {
+	font-size: 0.8rem;
+	font-style: italic;
+}
+
+.password-verdict b { font-weight: bold; }
+
+.link_reloadpage {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.link_generatenewlink, .link_connectme {
+	color: #1997c6;
+	cursor: pointer;
+}
+
+.link_generatenewlink:hover, .link_connectme:hover {
+	color: #006482;
+	text-decoration: underline;
+}
+
+.btn-group-toggle-selectschool {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.selectmyschoolfiltercontainer {
+	margin-bottom: 5px;
+}
+
+.btn-group > .btn-outline.disabled {
+	cursor: not-allowed;
+	color: #ccc;
+    border-color: #ccc;	
+}
+
+#carouselAddSchools {
+	width: 100%;
+}
+
+.addschoolcurrentselectcontainer { margin-bottom: 10px; margin-top: 10px; }
+.addschoolcurrentselectcontainertitle { font-weight: bold;  }
+.addschoolcaption { font-weight: bold; margin-bottom: 10px; }
+.selectmyschool { display: none; }
+.lbladdschoolnbstudent { margin-top: 5px; font-weight: bold; }
+
+.wait-screen {
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    overflow: hidden;
+    outline: 0;
+	background-color: #ffffff40;
+	
+}
+
+.wait-screen-container {
+	position: absolute;
+	left: 49%;
+	top: 49%;
+	-webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;	
+}
+.wait-screen-container.wait-screen-container-relative {
+	position: relative;
+}
+
+.wait-screen-logo {
+	font-size: 4rem;
+	color: #1DADF4;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.card.card-info {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.card.card-info .card-body {
+	/*cursor: pointer;*/
+}
+
+.card .card-img-info {
+	height: 150px;
+}
+
+.card .card-img-playinfo {
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.card.card-dribble { border: 1px solid rgba(57, 88, 3, 0.5); }
+.card.card-dribble > .card-header {	background-color: #49b900; font-weight: bold; }
+.card.card-shoot { border: 1px solid rgba(255, 0, 0, 0.5); }
+.card.card-shoot > .card-header {	background-color: #ff0000; font-weight: bold; }
+.card.card-pass { border: 1px solid rgba(49, 114, 251, 0.5); }
+.card.card-pass > .card-header {	background-color: #005bde; font-weight: bold; }
+.card.card-gamebox { border: 1px solid rgba(255, 193, 6, 0.5); }
+.card.card-gamebox > .card-header {	background-color: #FFC106; font-weight: bold; }
+.card.card-dribbleshootpass { border: 1px solid rgba(178, 136, 255, 0.5); }
+.card.card-dribbleshootpass > .card-header { background-color: #B288FF; font-weight: bold; }
+.card.card-dribbletir { border: 1px solid rgba(255, 241, 67, 0.5); }
+.card.card-dribbletir > .card-header { background-color: #fff143; font-weight: bold; }
+.card.card-tuto { border: 1px solid rgba(255, 98, 6, 0.5); }
+.card.card-tuto > .card-header { background-color: #ff6d06; font-weight: bold; }
+
+.selectmyschoolcurrentselected {
+	margin-top: 10px;
+}
+
+.btn-download-pdf { margin-top: 10px; }
