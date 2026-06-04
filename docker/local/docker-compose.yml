@@ -1,0 +1,58 @@
+name: obe
+
+services:
+
+  obe-app:
+    container_name: obe-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    networks:
+      -  obe-network
+    volumes:
+     - ./../../app:/var/www/app
+    environment:
+      - DB_HOST=obe-db
+      - DB_USER=root
+      - DB_PWD=actando
+      - DB_NAME=obe
+      - APP_URL=localhost:8090
+      - EMAIL_FROM=conctact@obe28.com
+      - ACTIVATE_EMAIL=false
+
+  obe-db:
+    container_name: obe-db
+    build:
+      context: .
+      dockerfile: mysql/Dockerfile
+    command: mysqld --default-authentication-plugin=mysql_native_password      
+    ports:
+      - "33062:3306"
+    networks:
+      - obe-network
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      - ./../../data/mysql/:/var/lib/mysql/
+   
+#   pharmacademy-v2-mailtrap:
+#     image: eaudeweb/mailtrap
+#     restart: unless-stopped
+#     container_name: pharmacademy-v2-mailtrap
+#     ports:
+#       - "8025:80"
+#       - "2525:25"
+#     environment:
+#       - MT_USER=mailtrap
+#       - MT_PASSWORD=mailtrap
+#       - MT_MAILBOX_LIMIT=512000001
+#       - MT_MESSAGE_LIMIT=102400001
+#     networks:
+#       - pharmacademy-v2-network  
+
+networks:
+  obe-network:
+    name: obe-network
+    driver: bridge

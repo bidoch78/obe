@@ -4,7 +4,7 @@
 	*
 	* objet : Parameters
 	*
-	* Gestion des parametres stockés dans une chaine de caractères
+	* Gestion des parametres stockï¿½s dans une chaine de caractï¿½res
 	***************************************************************************
 	*
 	* YBI le 21/10/2009
@@ -20,10 +20,10 @@
 	
 		/***********************
 		* GetParameters
-		* $str = chaine listant les paramètres
-		* $sep = caractère de séparation des paramètres (optionnel)
-		* $assign = caractère d'assignation (optionnel)
-		* $valdelimiter = caractère qui délimite la chaine valeur (optionnel)
+		* $str = chaine listant les paramï¿½tres
+		* $sep = caractï¿½re de sï¿½paration des paramï¿½tres (optionnel)
+		* $assign = caractï¿½re d'assignation (optionnel)
+		* $valdelimiter = caractï¿½re qui dï¿½limite la chaine valeur (optionnel)
 		* retourne un tableau contenant la liste des parametres + la valeur sans les "" si erreur de syntaxe retourne false
 		***********************/
 		public static function GetParameters($str, $sep=';', $assign='=' , $valdelimiter='"')
@@ -40,18 +40,17 @@
 
 			while($ptC < $ptMax)
 			{
-				$c = $str{$ptC};
+				$c = $str[$ptC];
 
 				if ($c == $assign)
 				{
 				
 					$optName = substr($str, $BeginAt, $ptC - $BeginAt);
 				
-					//on recherche le caractère suivant doit = "
 					//on zappe les blancs
 					while($ptC++ < $ptMax)
 					{
-						$c = $str{$ptC};
+						$c = $str[$ptC];
 						if ($c == ' ') {} //do nothing
 						elseif ($c == $valdelimiter)
 							break;
@@ -73,14 +72,13 @@
 					if ($nextValDelimiter === false) return false;
 				
 					$ptC = $nextValDelimiter;
-					
-					//cherche le caractère ";" on zappe les blancs
+
 					if ($ptC != $ptMax - 1)
 					{
 						
 						while($ptC++ < $ptMax)
 						{
-							$c = $str{$ptC};		
+							$c = $str[$ptC];		
 							if ($c == ' ') {} //do nothing
 							elseif ($c == $sep)
 								break;
@@ -91,7 +89,7 @@
 						
 					}
 
-					//Trouvé on retourne la valeur
+					//Trouvï¿½ on retourne la valeur
 					if ($Params === false) $Params = array();
 					$Params[$optName] = substr($str, $firstValDelimiter + 1, $nextValDelimiter - $firstValDelimiter - 1);
 					
@@ -109,13 +107,13 @@
 
 		/***********************
 		* AddParameter
-		* $str = chaine listant les paramètres
-		* $paramName = nom du paramètre à ajouter
-		* $paramValue = valeur du paramètre
-		* $sep = caractère de séparation des paramètres (optionnel)
-		* $assign = caractère d'assignation (optionnel)
-		* $valdelimiter = caractère qui délimite la chaine valeur (optionnel)
-		* Ajoute un paramètre dans une chaine, si il existe la valeur est remplacée
+		* $str = chaine listant les paramï¿½tres
+		* $paramName = nom du paramï¿½tre ï¿½ ajouter
+		* $paramValue = valeur du paramï¿½tre
+		* $sep = caractï¿½re de sï¿½paration des paramï¿½tres (optionnel)
+		* $assign = caractï¿½re d'assignation (optionnel)
+		* $valdelimiter = caractï¿½re qui dï¿½limite la chaine valeur (optionnel)
+		* Ajoute un paramï¿½tre dans une chaine, si il existe la valeur est remplacï¿½e
 		***********************/
 		public static function AddParameter($str, $paramName, $paramValue, $sep=';', $assign='=' , $valdelimiter='"')
 		{
@@ -139,12 +137,12 @@
 
 		/***********************
 		* GetParameter
-		* $str = chaine listant les paramètres
-		* $paramName = nom du paramètre
-		* $sep = caractère de séparation des paramètres (optionnel)
-		* $assign = caractère d'assignation (optionnel)
-		* $valdelimiter = caractère qui délimite la chaine valeur (optionnel)
-		* retourne la valeur sans les "" si erreur de syntaxe ou pas trouvé retourne false
+		* $str = chaine listant les paramï¿½tres
+		* $paramName = nom du paramï¿½tre
+		* $sep = caractï¿½re de sï¿½paration des paramï¿½tres (optionnel)
+		* $assign = caractï¿½re d'assignation (optionnel)
+		* $valdelimiter = caractï¿½re qui dï¿½limite la chaine valeur (optionnel)
+		* retourne la valeur sans les "" si erreur de syntaxe ou pas trouvï¿½ retourne false
 		***********************/
 		public static function GetParameter($str, $paramName, $sep=';', $assign='=' , $valdelimiter='"')
 		{
@@ -159,18 +157,18 @@
 
 			while($ptC < $ptMax)
 			{
-				$c = $str{$ptC};
+				$c = $str[$ptC];
 
 				if ($c == $assign)
 				{
 				
 					$optName = substr($str, $BeginAt, $ptC - $BeginAt);
 				
-					//on recherche le caractère suivant doit = "
+					//on recherche le caractï¿½re suivant doit = "
 					//on zappe les blancs
 					while($ptC++ < $ptMax)
 					{
-						$c = $str{$ptC};
+						$c = $str[$ptC];
 						if ($c == ' ') {} //do nothing
 						elseif ($c == $valdelimiter)
 							break;
@@ -193,13 +191,13 @@
 				
 					$ptC = $nextValDelimiter;
 					
-					//cherche le caractère ";" on zappe les blancs
+					//cherche le caractï¿½re ";" on zappe les blancs
 					if ($ptC != $ptMax - 1)
 					{
 						
 						while($ptC++ < $ptMax)
 						{
-							$c = $str{$ptC};		
+							$c = $str[$ptC];		
 							if ($c == ' ') {} //do nothing
 							elseif ($c == $sep)
 								break;
@@ -210,7 +208,7 @@
 						
 					}
 
-					//Trouvé on retourne la valeur
+					//Trouvï¿½ on retourne la valeur
 					if (strcasecmp($paramName, $optName) == 0)
 						return substr($str, $firstValDelimiter + 1, $nextValDelimiter - $firstValDelimiter - 1);
 				
@@ -228,12 +226,12 @@
 		
 		/***********************
 		* GetFirstParameters
-		* $params = chaine listant les paramètres
-		* $paramName = nom du paramètre
-		* $sep = caractère de séparation des paramètres (optionnel)
-		* $assign = caractère d'assignation (optionnel)
-		* $valdelimiter = caractère qui délimite la chaine valeur (optionnel)
-		* retourne la 1er valeur trouvée sans les "" si erreur de syntaxe ou pas trouvé retourne false
+		* $params = chaine listant les paramï¿½tres
+		* $paramName = nom du paramï¿½tre
+		* $sep = caractï¿½re de sï¿½paration des paramï¿½tres (optionnel)
+		* $assign = caractï¿½re d'assignation (optionnel)
+		* $valdelimiter = caractï¿½re qui dï¿½limite la chaine valeur (optionnel)
+		* retourne la 1er valeur trouvï¿½e sans les "" si erreur de syntaxe ou pas trouvï¿½ retourne false
 		***********************/
 		public static function GetFirstParameter(array $params, $paramName, $sep=';', $assign='=' , $valdelimiter='"')
 		{
@@ -248,11 +246,11 @@
 
 		/***********************
 		* GetFirstParameters
-		* $params = tableau contenant les paramètres [name]=value
-		* $sep = caractère de séparation des paramètres (optionnel)
-		* $assign = caractère d'assignation (optionnel)
-		* $valdelimiter = caractère qui délimite la chaine valeur (optionnel)
-		* retourne la 1er valeur trouvée sans les "" si erreur de syntaxe ou pas trouvé retourne false
+		* $params = tableau contenant les paramï¿½tres [name]=value
+		* $sep = caractï¿½re de sï¿½paration des paramï¿½tres (optionnel)
+		* $assign = caractï¿½re d'assignation (optionnel)
+		* $valdelimiter = caractï¿½re qui dï¿½limite la chaine valeur (optionnel)
+		* retourne la 1er valeur trouvï¿½e sans les "" si erreur de syntaxe ou pas trouvï¿½ retourne false
 		***********************/		
 		public static function WriteParameters(array $params, $sep=';', $assign='=' , $valdelimiter='"')
 		{

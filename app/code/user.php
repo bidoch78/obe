@@ -15,10 +15,20 @@
 	class User
 	{
 		
+		private array $data = [];
+
 		private $_db = null;
 		
 		public function __construct() {
 			$this->_db = db::getConnection();
+		}
+		
+		public function __set($name, $value) {
+			$this->data[$name] = $value;
+		}
+
+		public function __get($name) {
+			return $this->data[$name] ?? null;
 		}
 		
 		public function getFieldsUpdated($data) {
