@@ -25,4 +25,7 @@ chmod +x ./docker-deploy-entrypoint-custom
 docker build --force-rm -f Dockerfile -t obe:${version} .
 
 # #clean
-# rm -rf ./build_app
+rm -rf ./build_app
+
+docker tag obe:${version} bidoch78/obe:${version}
+docker push bidoch78/obe:${version}
