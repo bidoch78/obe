@@ -3,7 +3,7 @@
 	/**************************************************************************
 	*
 	* class : 1 fois par jours
-	* Suppression des comptes qui ne sont pas validé depuis plus d'1 mois
+	* Suppression des comptes qui ne sont pas validï¿½ depuis plus d'1 mois
 	***************************************************************************
 	*
 	* Ybi : 11/12/2018
@@ -16,10 +16,7 @@
 		
 		$userToDel = User::getUsersToDelete();
 		if (count($userToDel) > 0) {
-			
 			//Generation des emails
-			
-			
 		}
 		
 	}

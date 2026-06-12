@@ -19,8 +19,13 @@ services:
       - DB_PWD=actando
       - DB_NAME=obe
       - APP_URL=localhost:8090
-      - EMAIL_FROM=conctact@obe28.com
-      - ACTIVATE_EMAIL=false
+      - EMAIL_FROM=ybidoli.sys@gmail.com
+      - EMAIL_HOST=postfix
+      - EMAIL_PORT=25
+      - ACTIVATE_EMAIL=true
+      - EMAIL_SMTP=true
+    extra_hosts:
+      - "postfix:192.168.1.3"
 
   obe-db:
     container_name: obe-db

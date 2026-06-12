@@ -6,9 +6,11 @@
 	require_once(dirname(__FILE__) . "/mustache-mini.php");
 	require_once(dirname(__FILE__) . "/PHPMailer/src/PHPMailer.php");
 	require_once(dirname(__FILE__) . "/PHPMailer/src/Exception.php");
+	require_once(dirname(__FILE__) . "/PHPMailer/src/SMTP.php");
 	
 	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;	
+	use PHPMailer\PHPMailer\Exception;
+	use PHPMailer\PHPMailer\SMTP;
 	
 	/**************************************************************************
 	*
@@ -114,13 +116,15 @@
 					'allow_self_signed' => true)
 				);
 					
-				$PHPmail->Host = "localhost";
+				if (_EMAILSMTP_) $PHPmail->IsSMTP();
+
+				$PHPmail->Host = _EMAILHOST_;
 				$PHPmail->SMTPAuth = false; //Local mode
 				$PHPmail->SMTPKeepAlive = true;
 				$PHPmail->IsHTML(true);
 				$PHPmail->CharSet = "UTF-8";
 				$PHPmail->Encoding = "base64";
-				$PHPmail->isHTML(true); 
+				$PHPmail->Port = _EMAILPORT_;
 				
 			}
 			

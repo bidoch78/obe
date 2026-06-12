@@ -1,0 +1,4 @@
+# This send email every 2 minutes
+#* * * * * echo "toto" >> /var/www/cron.txt
+0 0 * * * php -f /var/www/app/cli/deleteusersnotvalidated.php > /dev/null 2>&1
+# An empty line is required at the end of this file for a valid cron file.

@@ -29,6 +29,10 @@ COPY ./supervisor/app-supervisor.conf /etc/supervisord.conf
 
 COPY ./build_app/app /var/www/app
 
+COPY ./cron/obe /etc/cron.d/obe
+RUN chmod 0644 /etc/cron.d/obe
+RUN crontab /etc/cron.d/obe
+
 ENTRYPOINT ["/usr/local/bin/docker-deploy-entrypoint-custom"]
 
 EXPOSE 80
